@@ -1,3 +1,5 @@
+var exports = module.exports;
+
 function handleErrors(response) {
   return new Promise((resolve, reject) => {
     if (response.ok) {
