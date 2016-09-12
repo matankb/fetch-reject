@@ -1,0 +1,22 @@
+{
+  "name": "fetch-reject",
+  "version": "1.0.0",
+  "description": "A simple wrapper for fetch which rejects on HTTP error",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matankb/fetch-reject.git"
+  },
+  "keywords": [
+    "fetch"
+  ],
+  "author": "Matan Kotler-Berkowitz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matankb/fetch-reject/issues"
+  },
+  "homepage": "https://github.com/matankb/fetch-reject#readme"
+}
