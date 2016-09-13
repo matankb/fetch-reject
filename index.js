@@ -18,7 +18,6 @@ function generatefetchReject(originalFetch) {
 	}
 }
 
-exports.fill = function fill() {
 	window.fetch = generatefetchReject(window.fetch);
 	return true;
 }
