@@ -18,6 +18,12 @@ function generatefetchReject(originalFetch) {
 	}
 }
 
+function fetchReject(...params) {
+  return fetch(params)
+    .then(handleErrors)
+}
+
+function fill() {
 	window.fetch = generatefetchReject(window.fetch);
 	return true;
 }
