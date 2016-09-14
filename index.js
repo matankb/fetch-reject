@@ -1,5 +1,10 @@
 var exports = module.exports;
 
+function fetchReject(...params) {
+  return fetch(params)
+    .then(handleErrors)
+}
+
 function handleErrors(response) {
   return new Promise((resolve, reject) => {
     if (response.ok) {
@@ -18,14 +23,9 @@ function generatefetchReject(originalFetch) {
 	}
 }
 
-function fetchReject(...params) {
-  return fetch(params)
-    .then(handleErrors)
-}
-
 function fill() {
 	window.fetch = generatefetchReject(window.fetch);
 	return true;
 }
 
-exports.fetchReject = generatefetchReject(window.fetch);
+exports.fetchReject = fetchReject;
