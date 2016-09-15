@@ -15,17 +15,4 @@ function handleErrors(response) {
   })
 }
 
-// factory function that retains original fetch function in closure
-function generatefetchReject(originalFetch) {
-	return function(url, opts) {
-		return originalFetch(url, opts)
-			.then(handleErrors);
-	}
-}
-
-function fill() {
-	window.fetch = generatefetchReject(window.fetch);
-	return true;
-}
-
-exports.fetchReject = fetchReject;
+exports = fetchReject;
