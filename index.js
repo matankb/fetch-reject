@@ -6,13 +6,11 @@ function fetchReject(...params) {
 }
 
 function handleErrors(response) {
-  return new Promise((resolve, reject) => {
-    if (response.ok) {
-      resolve(response);
-    } else {
-      reject(response.statusText);
-    }
-  })
+  if (response.ok) {
+    return response;
+  }
+  
+  throw response.statusText;
 }
 
 exports = fetchReject;
