@@ -1,7 +1,7 @@
 var exports = module.exports;
 
 function fetchReject(...params) {
-  return fetch(params)
+  return fetch(...params)
     .then(handleErrors)
 }
 
