@@ -1,16 +1,11 @@
 var exports = module.exports;
 
-function fetchReject(...params) {
-  return fetch(params)
-    .then(handleErrors)
-}
-
 function handleErrors(response) {
   if (response.ok) {
     return response;
   }
   
-  throw response.statusText;
+  throw Error(response.statusText);
 }
 
-exports = fetchReject;
+exports = (input, init) => fetch(input, init).then(handleErrors);
