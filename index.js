@@ -17,4 +17,13 @@ function handleErrors(response) {
 
 }
 
+// function to enhance fetch polyfills
+function createFetchReject(originFetch) {
+  return function(...params) {
+    originFetch(...params)
+      .then(handleErrors);
+  }
+}
+
 exports = fetchReject;
+exports.createFetchReject = createFetchReject;
