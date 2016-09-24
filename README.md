@@ -15,6 +15,7 @@ fetch('http://httpstat.us/500')
   .then(date => doSomething(data));
   .catch(err => {
     console.log(err) // -> 'GET ... 500 (Internal Server Error)'
+    console.log(err.status) // -> 500
   })
 ```
 ## License

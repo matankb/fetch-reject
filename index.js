@@ -9,8 +9,12 @@ function handleErrors(response) {
   if (response.ok) {
     return response;
   }
-  
-  throw response.statusText;
+
+  let error = new Error();
+  // attatch status to error so it can be accessed by handler
+  error.status = response.status;
+  throw error;
+
 }
 
 exports = fetchReject;
