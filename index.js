@@ -1,5 +1,3 @@
-var exports = module.exports;
-
 function fetchReject(...params) {
   return fetch(...params)
     .then(handleErrors)
@@ -25,5 +23,5 @@ function createFetchReject(originFetch) {
   }
 }
 
-exports = fetchReject;
-exports.createFetchReject = createFetchReject;
+module.exports = fetchReject;
+module.exports.createFetchReject = createFetchReject;
