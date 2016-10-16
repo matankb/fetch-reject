@@ -1,8 +1,3 @@
-function fetchReject(...params) {
-  return fetch(...params)
-    .then(handleErrors)
-}
-
 function handleErrors(response) {
   if (response.ok) {
     return response;
@@ -15,8 +10,13 @@ function handleErrors(response) {
 
 }
 
-// function to enhance fetch polyfills
+function fetchReject(url, init) {
+  return fetch(url, init)
+    .then(handleErrors)
+}
+
 function createFetchReject(originFetch) {
+// function to enhance fetch polyfills
   return function(...params) {
     originFetch(...params)
       .then(handleErrors);
