@@ -3,7 +3,7 @@ function handleErrors(response) {
     return response;
   }
 
-  let error = new Error();
+  var error = new Error();
   // attatch status to error so it can be accessed by handler
   error.status = response.status;
   throw error;
