@@ -17,8 +17,8 @@ function fetchReject(url, init) {
 
 function createFetchReject(originFetch) {
 // function to enhance fetch polyfills
-  return function(...params) {
-    originFetch(...params)
+  return function(url, init) {
+    originFetch(url, init)
       .then(handleErrors);
   }
 }
