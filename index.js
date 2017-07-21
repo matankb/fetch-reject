@@ -4,8 +4,9 @@ function handleErrors(response) {
   }
 
   var error = new Error();
-  // attatch status to error so it can be accessed by handler
+  // attatch status and response to error so it can be accessed by handler
   error.status = response.status;
+  error.response = response;
   throw error;
 
 }
